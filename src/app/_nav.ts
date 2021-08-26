@@ -29,6 +29,18 @@ export const navItems: INavData[] = [
     name: 'Components'
   },
   {
+    name: 'ITIL',
+    url: '/itil',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Lista',
+        url: '/itil/list',
+        icon: 'icon-puzzle'
+      }
+    ]
+  },
+  {
     name: 'Base',
     url: '/base',
     icon: 'icon-puzzle',
@@ -222,30 +234,5 @@ export const navItems: INavData[] = [
         icon: 'icon-star'
       }
     ]
-  },
-  {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
-  },
-  {
-    name: 'Download CoreUI',
-    url: 'http://coreui.io/angular/',
-    icon: 'icon-cloud-download',
-    class: 'mt-auto',
-    variant: 'success',
-    attributes: { target: '_blank', rel: 'noopener' }
-  },
-  {
-    name: 'Try CoreUI PRO',
-    url: 'http://coreui.io/pro/angular/',
-    icon: 'icon-layers',
-    variant: 'danger',
-    attributes: { target: '_blank', rel: 'noopener' }
   }
 ];

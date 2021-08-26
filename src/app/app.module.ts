@@ -67,8 +67,7 @@ import { ItilComponent } from './views/itil/itil.component';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent,
-    ItilComponent
+    RegisterComponent
   ],
   providers: [
     {
