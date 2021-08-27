@@ -1,1 +1,47 @@
-<p>matrix works!</p>
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Basic Form</strong> Elements
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Checkboxes</label>
+                        <div class="col-md-9 col-form-label">
+                            <div class="form-check" *ngFor="let criter of filterCriterion">
+                                <input class="form-check-input" (change)="onCheckboxChange(criter,$event)"
+                                    type="checkbox" value="option{{criter.id}}" id="checkbox{{criter.id}}">
+                                <label class="form-check-label" for="checkbox{{criter.id}}">
+                                    {{criter.label}}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Order</strong> Elements
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label class="col-md-3 col-form-label">Prioridad</label>
+                        <div class="col-md-9 col-form-label">
+                            <div *ngFor="let criter of sortCriterion;let i = index">
+                                <p style="margin: 0;">{{criter}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" (click)="validation()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                        Submit</button>
+                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
