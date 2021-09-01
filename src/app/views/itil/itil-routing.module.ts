@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ItilComponent } from './itil.component';
 import { MatrixComponent } from './matrix/matrix.component';
+import { StadisticComponent } from './stadistic/stadistic.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,13 @@ const routes: Routes = [
         component: MatrixComponent,
         data: {
           title: 'Matrix'
+        }
+      },
+      {
+        path: 'stadistic',
+        component: StadisticComponent,
+        data: {
+          title: 'Stadistic'
         }
       }
     ]

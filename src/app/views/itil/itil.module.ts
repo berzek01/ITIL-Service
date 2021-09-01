@@ -6,14 +6,17 @@ import { ItilRoutingModule } from './itil-routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { MatrixComponent } from './matrix/matrix.component';
+import { StadisticComponent } from './stadistic/stadistic.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
-  declarations: [ItilComponent, MatrixComponent],
+  declarations: [ItilComponent, MatrixComponent, StadisticComponent],
   imports: [
     CommonModule,
     FormsModule,
     ItilRoutingModule,
     ModalModule,
+    ChartsModule,
     BsDropdownModule.forRoot()
   ]
 })

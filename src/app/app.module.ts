@@ -42,7 +42,7 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
-import { ItilComponent } from './views/itil/itil.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -60,6 +60,7 @@ import { ItilComponent } from './views/itil/itil.component';
     ChartsModule,
     IconModule,
     IconSetModule.forRoot(),
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,

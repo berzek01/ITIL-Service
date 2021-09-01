@@ -30,14 +30,15 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">Prioridad</label>
                         <div class="col-md-9 col-form-label">
-                            <div *ngFor="let criter of sortCriterion;let i = index">
-                                <p style="margin: 0;">{{criter}}</p>
+                            <div *ngFor="let criter of disorderSortCriterion;let i = index">
+                                <p style="margin: 0;">{{criter.label}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button type="submit" (click)="validation()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i>
+                    <button type="submit" (click)="validation()" class="btn btn-sm btn-primary"><i
+                            class="fa fa-dot-circle-o"></i>
                         Submit</button>
                     <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
                 </div>
