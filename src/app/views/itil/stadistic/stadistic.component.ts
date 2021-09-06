@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { ItilService } from '../../../services/itil.service';
 
 @Component({
   templateUrl: './stadistic.component.html'
 })
 export class StadisticComponent implements OnInit {
 
-  constructor() { }
+  vector = [];
+  orderSort = [];
+
+  constructor(private itilService:ItilService) {
+  }
 
   ngOnInit(): void {
   }

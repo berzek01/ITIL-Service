@@ -30,9 +30,12 @@
                     <div class="form-group row">
                         <label class="col-md-3 col-form-label">Prioridad</label>
                         <div class="col-md-9 col-form-label">
-                            <div *ngFor="let criter of disorderSortCriterion;let i = index">
+                            <!-- <span>Más importante --------------- Menos importante </span> -->
+                            <!-- <div style="display: flex;justify-content: space-evenly;"><br> -->
+                            <div *ngFor="let criter of orderSortCriterion;let i = index">
                                 <p style="margin: 0;">{{criter.label}}</p>
                             </div>
+                        <!-- </div> -->
                         </div>
                     </div>
                 </div>

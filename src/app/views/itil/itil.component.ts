@@ -15,14 +15,14 @@ export class ItilComponent {
     this.allCriterion=[{id:1,label:"criterio 1",checked:false},{id:2,label:"criterio 2",checked:false},
     {id:3,label:"criterio 3",checked:false},{id:4,label:"criterio 4",checked:false},
     {id:5,label:"criterio 5",checked:false},{id:6,label:"criterio 6",checked:false},
-    {id:7,label:"criterio 7",checked:false},{id:8,label:"criterio 8",checked:false}];
+    {id:7,label:"criterio 7",checked:false}];
   }
 
   onSaveCheck() {
     if(!this.validation()){
       alert('Seleccione 4 criterios');return;
     }
-    this.onSaveEdit();
+    this.itilService.writeLocal("check", this.allCriterion);
     this.route.navigate(['/itil/matrix']);
   }
 
@@ -32,10 +32,6 @@ export class ItilComponent {
     } else {
       option.checked = false;
     }
-  }
-
-  onSaveEdit() {
-    this.itilService.writeLocal("check", this.allCriterion);
   }
 
   validation(){
