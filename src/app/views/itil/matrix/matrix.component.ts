@@ -63,6 +63,7 @@ export class MatrixComponent implements OnInit {
           this.RelationCXS.push((resp as any).CXS[(c.id-1)][1]);
         });
         this.RelationCXS = this.RelationCXS.sort(function (a, b) {  return a - b;  });
+        this.itilService.writeLocal('cxs',this.RelationCXS);
         this.algorithm2();
       }, err => console.log(err));
   }
@@ -141,9 +142,10 @@ export class MatrixComponent implements OnInit {
     var ClearMatrix=[];
     var suma=0;
     var ponderado=[];
-    console.log(this.AllVectors);
-    console.log(this.saveSortCriterion);
-    console.log(this.weightedVector);
+    this.weightedVector.sort(function(a, b){return b-a});
+    // console.log(this.AllVectors);
+    // console.log(this.saveSortCriterion);
+    // console.log(this.weightedVector);
     this.AllVectors.forEach((e)=>{
       for(var i=0;i<this.weightedVector.length;i++){
         if(e.id==this.saveSortCriterion[i].id){
@@ -155,37 +157,27 @@ export class MatrixComponent implements OnInit {
     Matrix.forEach((e)=> {
       ClearMatrix.push(e[0]);
     })
-    console.log(ClearMatrix);
+    // console.log(ClearMatrix);
     for(var i=0;i<this.AllVectors[0].vector.length;i++){
       for(var j=0;j<this.weightedVector.length;j++){
         suma+=this.weightedVector[j]*ClearMatrix[j][i];
       }
-      ponderado.push(suma.toFixed(2));
+      ponderado.push((suma*100).toFixed(2));
       suma=0;
     }
-    console.log(ponderado);
-    // this.route.navigate(['/itil/stadistic']);
+    this.itilService.writeLocal('ponderado',ponderado);
+    this.route.navigate(['/itil/stadistic']);
   }
 
   //util
   orderCriterion(){
     this.saveSortCriterion={...this.orderSortCriterion};
+    this.itilService.writeLocal('orderSort',this.orderSortCriterion);
     this.orderSortCriterion.sort(function (a, b) {
       if (a.id > b.id) return 1;
       if (a.id < b.id) return -1;
       return 0;
     });
   }
-  // orderVectors(){ 
-  //   var save=[[],[],[],[]];
-  //   this.AllVectors.forEach((e)=>{
-  //     for(var i=0;i<this.weightedVector.length;i++){
-  //       if(e.id==this.saveSortCriterion[i].id){
-  //         save[i].splice(i,i,e.vector);
-  //       }
-  //     }
-  //   });
-  //   console.log(save);
-  // }
 
 }
